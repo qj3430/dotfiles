@@ -93,6 +93,15 @@ alias la='ls -A'
 alias l='ls -CF'
 alias ~~='cd ~'
 alias ..='cd ..'
+alias src='source ~/dotfiles/.bashrc'
+
+function mkcd() {
+    mkdir -p "$1" && cd "$1"
+}
+
+cd() {
+    builtin cd "$@" && ls -la
+}
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
